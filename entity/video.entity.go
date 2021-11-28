@@ -8,6 +8,6 @@ type Video struct {
 	Title    string `gorm:"type:varchar(255)" json:"title"`
 	Semester int16  `gorm:"type:int" json:"semester"`
 	URL      string `gorm:"type:varchar(255)" json:"url"`
-	DosenID  uint64 `gorm:"not null" json:"dosen_id"`
-	Dosen     Dosen `gorm:"foreignkey:DosenID;constraint:onUpdate:CASCADE,onDelete:CASCADE" json:"dosen"`
+	UserID   User `gorm:"not null" json:"-"`
+	User     User `gorm:"foreignkey:UserID;constraint:onUpdate:CASCADE,onDelete:CASCADE" json:"user"`
 }

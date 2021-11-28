@@ -2,7 +2,7 @@ package helper
 
 import "strings"
 
-//Response use for json return 
+//Response use for json return
 type Response struct {
 	Status  bool        `json:"status"`
 	Message string      `json:"message"`
@@ -10,10 +10,8 @@ type Response struct {
 	Data    interface{} `json:"data"`
 }
 
-
 //EmptyObject used when data doesnt want to be nil on json format
 type EmptyObject struct{}
-
 
 //MakeResponse use to make response when API is called
 func MakeResponse(status bool, message string, data interface{}) *Response {
