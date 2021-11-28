@@ -21,7 +21,7 @@ func SetupDatabaseConnection() *gorm.DB {
 	dbHost := os.Getenv("DB_HOST")
 	dbName := os.Getenv("DB_NAME")
 
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?charset=utf8mb4&parseTime=True&loc=local", dbUser, dbPassword, dbHost, dbName)
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?charset=utf8mb4&parseTime=True&loc=Asia%%2FJakarta", dbUser, dbPassword, dbHost, dbName)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
